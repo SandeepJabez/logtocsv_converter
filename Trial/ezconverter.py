@@ -10,17 +10,18 @@ class LogConverterGUI:
         self.master = master
         master.title("Log Converter")
 
+
         # Create input file selection button
         self.input_files_button = tk.Button(master, text="Select input files", command=self.select_input_files)
-        self.input_files_button.pack(padx=10, pady=10)
+        self.input_files_button.pack(padx=100, pady=50)
 
         # Create output file selection button
         self.output_file_button = tk.Button(master, text="Select output file", command=self.select_output_file)
-        self.output_file_button.pack(padx=10, pady=10)
+        self.output_file_button.pack(padx=100, pady=50)
 
         # Create conversion button
         self.convert_button = tk.Button(master, text="Convert", command=self.convert)
-        self.convert_button.pack(padx=10, pady=10)
+        self.convert_button.pack(padx=100, pady=50)
 
         # Initialize file selection variables
         self.input_files = []
