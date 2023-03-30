@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio/Video Transcription</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #343a40;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      h1  {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      main {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      form {
+        display: inline-block;
+        text-align: left;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input,
+      select {
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        padding: 10px;
+        width: 100%;
+        display: block;
+        font-size: 16px;
+      }
+
+      button {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: green;
+        cursor: pointer;
+      }
+
+      #transcription-container {
+        display: flex;
+        justify-content: center;
+        border: 1px solid #ccc;
+      }
+
+      #transcription1,
+      #transcription2,
+      #summary {
+        background-color: #F5F5F5;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: justify;
+        width: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Audio/Video Transcription</h1>
+    </header>
+    <main>
+      <center>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="fileInput">Select a file:</label>
+            <input type="file" id="fileInput" name="fileInput">
+          </div>
+          <div class="form-group">
+            <label for="languageSelect">Select a language:</label>
+            <select id="languageSelect" name="language">
+              <option value="af">Afrikaans</option>
+              <option value="sq">Albanian</option>
+              <!-- Add more language options here -->
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+      </center>
+
+
+
+      <div id="transcription-container" style="display: flex; justify-content: center;">
+        <div style="flex: 1; padding: 10px;">
+          <div id="transcription1" style="background-color: #F5F5F5; padding: 10px; border-radius: 5px; text-align: justify;">
+            <h2 style="text-align: center;">Transcription in English:</h2>
+            <br>
+            <p>{{ text }}</p>
+          </div>
+        </div>
+        
+        <div style="flex: 1; padding: 10px;">
+          <div id="transcription2" style="background-color: #F5F5F5; padding: 10px; border-radius: 5px; text-align: justify;">
+            <h2 style="text-align: center;">Transcription in Second Language:</h2>
+            <br>
+            <p>{{ translated }}</p>
+          </div>
+        </div>
+        
+        <div style="flex: 1; padding: 10px;">
+          <div id="summary" style="background-color: #F5F5F5; padding: 10px; border-radius: 5px; text-align: justify;">
+            <h2 style="text-align: center;">Summary:</h2>
+            <br>
+            <p>{{ summary }}</p>
+          </div>
+        </div>
+      </div>
+      
+      
+    </main>
+  </body>
+</html>
