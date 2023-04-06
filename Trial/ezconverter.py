@@ -93,3 +93,7 @@ def hash_row(row):
 root = tk.Tk()
 app = LogConverterGUI(root)
 root.mainloop()
+
+
+
+# I'm not sure if this is the best way to do this, but it works. I'm open to suggestions.
